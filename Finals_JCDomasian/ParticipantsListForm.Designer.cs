@@ -30,13 +30,13 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblSearchName = new System.Windows.Forms.Label();
-            this.txtSearchName = new System.Windows.Forms.TextBox();
-            this.lblMarathonType = new System.Windows.Forms.Label();
-            this.cmbMarathonType = new System.Windows.Forms.ComboBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.cmbMarathonType = new System.Windows.Forms.ComboBox();
+            this.lblMarathonType = new System.Windows.Forms.Label();
+            this.txtSearchName = new System.Windows.Forms.TextBox();
+            this.lblSearchName = new System.Windows.Forms.Label();
             this.dgvParticipants = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParticipants)).BeginInit();
@@ -68,48 +68,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search & Filter";
             // 
-            // lblSearchName
+            // btnAddNew
             // 
-            this.lblSearchName.AutoSize = true;
-            this.lblSearchName.Location = new System.Drawing.Point(20, 30);
-            this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(75, 13);
-            this.lblSearchName.TabIndex = 0;
-            this.lblSearchName.Text = "Search Name:";
-            // 
-            // txtSearchName
-            // 
-            this.txtSearchName.Location = new System.Drawing.Point(120, 27);
-            this.txtSearchName.Name = "txtSearchName";
-            this.txtSearchName.Size = new System.Drawing.Size(200, 20);
-            this.txtSearchName.TabIndex = 1;
-            // 
-            // lblMarathonType
-            // 
-            this.lblMarathonType.AutoSize = true;
-            this.lblMarathonType.Location = new System.Drawing.Point(350, 30);
-            this.lblMarathonType.Name = "lblMarathonType";
-            this.lblMarathonType.Size = new System.Drawing.Size(82, 13);
-            this.lblMarathonType.TabIndex = 2;
-            this.lblMarathonType.Text = "Marathon Type:";
-            // 
-            // cmbMarathonType
-            // 
-            this.cmbMarathonType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMarathonType.FormattingEnabled = true;
-            this.cmbMarathonType.Location = new System.Drawing.Point(470, 27);
-            this.cmbMarathonType.Name = "cmbMarathonType";
-            this.cmbMarathonType.Size = new System.Drawing.Size(150, 21);
-            this.cmbMarathonType.TabIndex = 3;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(760, 25);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(90, 30);
-            this.btnRefresh.TabIndex = 4;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnAddNew.Location = new System.Drawing.Point(23, 88);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(150, 30);
+            this.btnAddNew.TabIndex = 6;
+            this.btnAddNew.Text = "Add New Participant";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click_1);
             // 
             // btnSearch
             // 
@@ -121,14 +88,49 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
-            // btnAddNew
+            // btnRefresh
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(23, 88);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(150, 30);
-            this.btnAddNew.TabIndex = 6;
-            this.btnAddNew.Text = "Add New Participant";
-            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(760, 25);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(90, 30);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click_1);
+            // 
+            // cmbMarathonType
+            // 
+            this.cmbMarathonType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMarathonType.FormattingEnabled = true;
+            this.cmbMarathonType.Location = new System.Drawing.Point(470, 27);
+            this.cmbMarathonType.Name = "cmbMarathonType";
+            this.cmbMarathonType.Size = new System.Drawing.Size(150, 21);
+            this.cmbMarathonType.TabIndex = 3;
+            // 
+            // lblMarathonType
+            // 
+            this.lblMarathonType.AutoSize = true;
+            this.lblMarathonType.Location = new System.Drawing.Point(350, 30);
+            this.lblMarathonType.Name = "lblMarathonType";
+            this.lblMarathonType.Size = new System.Drawing.Size(82, 13);
+            this.lblMarathonType.TabIndex = 2;
+            this.lblMarathonType.Text = "Marathon Type:";
+            // 
+            // txtSearchName
+            // 
+            this.txtSearchName.Location = new System.Drawing.Point(120, 27);
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchName.TabIndex = 1;
+            // 
+            // lblSearchName
+            // 
+            this.lblSearchName.AutoSize = true;
+            this.lblSearchName.Location = new System.Drawing.Point(20, 30);
+            this.lblSearchName.Name = "lblSearchName";
+            this.lblSearchName.Size = new System.Drawing.Size(75, 13);
+            this.lblSearchName.TabIndex = 0;
+            this.lblSearchName.Text = "Search Name:";
             // 
             // dgvParticipants
             // 

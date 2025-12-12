@@ -181,5 +181,15 @@ namespace Finals_JCDomasian
         {
 
         }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddNew_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
