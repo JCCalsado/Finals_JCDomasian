@@ -118,8 +118,7 @@ namespace Finals_JCDomasian
             }
         }
 
-        // Search button click
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -137,8 +136,7 @@ namespace Finals_JCDomasian
             }
         }
 
-        // Refresh button click
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -159,8 +157,7 @@ namespace Finals_JCDomasian
             }
         }
 
-        // Add New Participant button click
-        private void btnAddNew_Click(object sender, EventArgs e)
+        private void btnAddNew_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -175,21 +172,6 @@ namespace Finals_JCDomasian
                 MessageBox.Show("Error opening registration form: " + ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnSearch_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRefresh_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddNew_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

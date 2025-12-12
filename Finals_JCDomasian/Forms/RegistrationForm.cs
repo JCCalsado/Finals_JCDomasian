@@ -40,7 +40,7 @@ namespace Finals_JCDomasian.Forms
             }
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void btnRegister_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -187,7 +187,7 @@ namespace Finals_JCDomasian.Forms
             txtFullName.Focus();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to clear all fields?",
                 "Clear Fields", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -198,7 +198,7 @@ namespace Finals_JCDomasian.Forms
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to cancel?",
                 "Cancel Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -208,21 +208,6 @@ namespace Finals_JCDomasian.Forms
                 this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }
-        }
-
-        private void btnRegister_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
