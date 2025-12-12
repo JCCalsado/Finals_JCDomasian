@@ -21,15 +21,11 @@ namespace Finals_JCDomasian
             dbHelper = new DbHelper();
         }
 
-        // Form Load - runs when form opens
         private void ParticipantsListForm_Load(object sender, EventArgs e)
         {
             try
             {
-                // Load marathon types into ComboBox
                 LoadMarathonTypes();
-
-                // Load all participants into DataGridView
                 LoadParticipants();
             }
             catch (Exception ex)
@@ -39,7 +35,6 @@ namespace Finals_JCDomasian
             }
         }
 
-        // Load all participants
         private void LoadParticipants()
         {
             try
@@ -47,7 +42,6 @@ namespace Finals_JCDomasian
                 DataTable dt = dbHelper.GetAllParticipants();
                 dgvParticipants.DataSource = dt;
 
-                // Format columns
                 FormatDataGridView();
             }
             catch (Exception ex)
@@ -57,7 +51,6 @@ namespace Finals_JCDomasian
             }
         }
 
-        // Load marathon types into ComboBox
         private void LoadMarathonTypes()
         {
             try
@@ -67,7 +60,7 @@ namespace Finals_JCDomasian
                 cmbMarathonType.Items.Add("5km");
                 cmbMarathonType.Items.Add("10km");
                 cmbMarathonType.Items.Add("25km");
-                cmbMarathonType.SelectedIndex = 0; // Select "All" by default
+                cmbMarathonType.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -76,16 +69,13 @@ namespace Finals_JCDomasian
             }
         }
 
-        // Format DataGridView columns
         private void FormatDataGridView()
         {
             if (dgvParticipants.Columns.Count > 0)
             {
-                // Hide ParticipantID column
                 if (dgvParticipants.Columns.Contains("ParticipantID"))
                     dgvParticipants.Columns["ParticipantID"].Visible = false;
 
-                // Set column headers
                 if (dgvParticipants.Columns.Contains("FullName"))
                     dgvParticipants.Columns["FullName"].HeaderText = "Name";
 
@@ -140,11 +130,9 @@ namespace Finals_JCDomasian
         {
             try
             {
-                // Clear filters
                 txtSearchName.Clear();
                 cmbMarathonType.SelectedIndex = 0;
 
-                // Reload all data
                 LoadParticipants();
 
                 MessageBox.Show("Data refreshed successfully!", "Success",
@@ -162,9 +150,8 @@ namespace Finals_JCDomasian
             try
             {
                 Finals_JCDomasian.Forms.RegistrationForm regForm = new Finals_JCDomasian.Forms.RegistrationForm();
-                regForm.ShowDialog(); // Open as modal dialog
+                regForm.ShowDialog();
 
-                // Refresh data after registration form closes
                 LoadParticipants();
             }
             catch (Exception ex)

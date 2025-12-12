@@ -18,19 +18,16 @@ namespace Finals_JCDomasian.Forms
         {
             try
             {
-                // Load Marathon Types
                 cmbMarathonType.Items.Clear();
                 cmbMarathonType.Items.Add("5km");
                 cmbMarathonType.Items.Add("10km");
                 cmbMarathonType.Items.Add("25km");
 
-                // Load Payment Status
                 cmbPaymentStatus.Items.Clear();
                 cmbPaymentStatus.Items.Add("Paid");
                 cmbPaymentStatus.Items.Add("Unpaid");
-                cmbPaymentStatus.SelectedIndex = 1; // Default to Unpaid
+                cmbPaymentStatus.SelectedIndex = 1;
 
-                // Set default date to 18 years ago
                 dtpBirthday.Value = DateTime.Now.AddYears(-18);
             }
             catch (Exception ex)
@@ -44,13 +41,11 @@ namespace Finals_JCDomasian.Forms
         {
             try
             {
-                // Validate inputs
                 if (!ValidateInputs())
                 {
                     return;
                 }
 
-                // Check if bib number already exists
                 if (dbHelper.BibNumberExists(txtBibNumber.Text.Trim()))
                 {
                     MessageBox.Show("Bib number already exists! Please use a different bib number.",
@@ -59,7 +54,6 @@ namespace Finals_JCDomasian.Forms
                     return;
                 }
 
-                // Get TypeID from marathon type
                 int typeID = dbHelper.GetTypeIDByName(cmbMarathonType.SelectedItem.ToString());
 
                 if (typeID == 0)
@@ -69,7 +63,6 @@ namespace Finals_JCDomasian.Forms
                     return;
                 }
 
-                // Insert participant
                 bool success = dbHelper.InsertParticipant(
                     txtFullName.Text.Trim(),
                     dtpBirthday.Value,

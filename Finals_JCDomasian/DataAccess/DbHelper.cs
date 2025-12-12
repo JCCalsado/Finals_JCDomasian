@@ -7,16 +7,13 @@ namespace Finals_JCDomasian.DataAccess
 {
     public class DbHelper
     {
-        // Connection string - update if your MySQL has a password
         private string connectionString = "Server=localhost;Database=milomarathondb;Uid=root;Pwd=;";
 
-        // Get database connection
         private MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);
         }
 
-        // Get all participants with marathon type details
         public DataTable GetAllParticipants()
         {
             DataTable dt = new DataTable();
@@ -50,7 +47,6 @@ namespace Finals_JCDomasian.DataAccess
             return dt;
         }
 
-        // Get marathon types for ComboBox
         public DataTable GetMarathonTypes()
         {
             DataTable dt = new DataTable();
@@ -70,7 +66,6 @@ namespace Finals_JCDomasian.DataAccess
             return dt;
         }
 
-        // Search participants by name and/or marathon type
         public DataTable SearchParticipants(string nameFilter, string marathonType)
         {
             DataTable dt = new DataTable();
@@ -93,13 +88,11 @@ namespace Finals_JCDomasian.DataAccess
                         INNER JOIN marathontypes m ON p.TypeID = m.TypeID
                         WHERE 1=1";
 
-                    // Add name filter if provided
                     if (!string.IsNullOrWhiteSpace(nameFilter))
                     {
                         query += " AND p.FullName LIKE @nameFilter";
                     }
 
-                    // Add marathon type filter if not "All"
                     if (!string.IsNullOrWhiteSpace(marathonType) && marathonType != "All")
                     {
                         query += " AND m.MarathonType = @marathonType";
@@ -130,7 +123,6 @@ namespace Finals_JCDomasian.DataAccess
             return dt;
         }
 
-        // Check if bib number already exists
         public bool BibNumberExists(string bibNumber)
         {
             try
@@ -153,7 +145,6 @@ namespace Finals_JCDomasian.DataAccess
             }
         }
 
-        // Insert new participant
         public bool InsertParticipant(string fullName, DateTime birthDate, string phone,
                                      string address, string bibNumber, int typeID, string paymentStatus)
         {
@@ -185,7 +176,7 @@ namespace Finals_JCDomasian.DataAccess
             }
             catch (MySqlException ex)
             {
-                if (ex.Number == 1062) // Duplicate key error
+                if (ex.Number == 1062)
                 {
                     throw new Exception("Bib number already exists. Please use a different bib number.");
                 }
@@ -197,7 +188,6 @@ namespace Finals_JCDomasian.DataAccess
             }
         }
 
-        // Get TypeID from marathon type name
         public int GetTypeIDByName(string marathonType)
         {
             try

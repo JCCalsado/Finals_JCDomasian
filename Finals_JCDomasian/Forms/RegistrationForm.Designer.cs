@@ -52,7 +52,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(120, 20);
+            this.lblTitle.Location = new System.Drawing.Point(106, 20);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(269, 23);
             this.lblTitle.TabIndex = 0;
@@ -61,7 +61,7 @@
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
-            this.lblFullName.Location = new System.Drawing.Point(30, 70);
+            this.lblFullName.Location = new System.Drawing.Point(30, 74);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(57, 13);
             this.lblFullName.TabIndex = 1;
@@ -70,7 +70,7 @@
             // lblBirthday
             // 
             this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Location = new System.Drawing.Point(30, 110);
+            this.lblBirthday.Location = new System.Drawing.Point(30, 109);
             this.lblBirthday.Name = "lblBirthday";
             this.lblBirthday.Size = new System.Drawing.Size(48, 13);
             this.lblBirthday.TabIndex = 2;
@@ -145,7 +145,7 @@
             // dtpBirthday
             // 
             this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthday.Location = new System.Drawing.Point(150, 107);
+            this.dtpBirthday.Location = new System.Drawing.Point(150, 108);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(300, 20);
             this.dtpBirthday.TabIndex = 11;
@@ -154,7 +154,7 @@
             // 
             this.txtAddress.Location = new System.Drawing.Point(150, 187);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(300, 60);
+            this.txtAddress.Size = new System.Drawing.Size(300, 74);
             this.txtAddress.TabIndex = 12;
             this.txtAddress.Text = "";
             // 
@@ -179,7 +179,7 @@
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.LightGreen;
-            this.btnRegister.Location = new System.Drawing.Point(80, 420);
+            this.btnRegister.Location = new System.Drawing.Point(61, 420);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(120, 40);
             this.btnRegister.TabIndex = 15;
@@ -189,7 +189,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(220, 420);
+            this.btnClear.Location = new System.Drawing.Point(201, 420);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 40);
             this.btnClear.TabIndex = 16;
@@ -199,7 +199,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(340, 420);
+            this.btnCancel.Location = new System.Drawing.Point(321, 420);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 40);
             this.btnCancel.TabIndex = 17;
