@@ -1,4 +1,4 @@
-﻿namespace FinalsTP_YourLastName.Models
+﻿namespace Finals_JCDomasian.Models
 {
     public class MarathonType
     {

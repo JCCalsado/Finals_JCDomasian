@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace FinalsTP_YourLastName.DataAccess
+namespace Finals_JCDomasian.DataAccess
 {
     public class DbHelper
     {
