@@ -1,13 +1,6 @@
-﻿using Finals_JCDomasian.DataAccess;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using Finals_JCDomasian.DataAccess;
 
 namespace Finals_JCDomasian.Forms
 {
@@ -21,7 +14,6 @@ namespace Finals_JCDomasian.Forms
             dbHelper = new DbHelper();
         }
 
-        // Form Load Event
         private void RegistrationForm_Load(object sender, EventArgs e)
         {
             try
@@ -38,7 +30,7 @@ namespace Finals_JCDomasian.Forms
                 cmbPaymentStatus.Items.Add("Unpaid");
                 cmbPaymentStatus.SelectedIndex = 1; // Default to Unpaid
 
-                // Set default date to 18 years ago (minimum age suggestion)
+                // Set default date to 18 years ago
                 dtpBirthday.Value = DateTime.Now.AddYears(-18);
             }
             catch (Exception ex)
@@ -48,7 +40,6 @@ namespace Finals_JCDomasian.Forms
             }
         }
 
-        // Register Button Click
         private void btnRegister_Click(object sender, EventArgs e)
         {
             try
@@ -94,7 +85,6 @@ namespace Finals_JCDomasian.Forms
                     MessageBox.Show("Participant registered successfully!", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Ask if user wants to add another participant
                     DialogResult result = MessageBox.Show("Do you want to register another participant?",
                         "Continue?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -121,10 +111,8 @@ namespace Finals_JCDomasian.Forms
             }
         }
 
-        // Validate all inputs
         private bool ValidateInputs()
         {
-            // Check Full Name
             if (string.IsNullOrWhiteSpace(txtFullName.Text))
             {
                 MessageBox.Show("Please enter the participant's full name.", "Validation Error",
@@ -133,7 +121,6 @@ namespace Finals_JCDomasian.Forms
                 return false;
             }
 
-            // Check Phone Number
             if (string.IsNullOrWhiteSpace(txtPhone.Text))
             {
                 MessageBox.Show("Please enter a phone number.", "Validation Error",
@@ -142,16 +129,6 @@ namespace Finals_JCDomasian.Forms
                 return false;
             }
 
-            // Basic phone validation (must contain digits)
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtPhone.Text, @"\d"))
-            {
-                MessageBox.Show("Phone number must contain digits.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPhone.Focus();
-                return false;
-            }
-
-            // Check Address
             if (string.IsNullOrWhiteSpace(txtAddress.Text))
             {
                 MessageBox.Show("Please enter an address.", "Validation Error",
@@ -160,7 +137,6 @@ namespace Finals_JCDomasian.Forms
                 return false;
             }
 
-            // Check Bib Number
             if (string.IsNullOrWhiteSpace(txtBibNumber.Text))
             {
                 MessageBox.Show("Please enter a bib number.", "Validation Error",
@@ -169,7 +145,6 @@ namespace Finals_JCDomasian.Forms
                 return false;
             }
 
-            // Check Marathon Type
             if (cmbMarathonType.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a marathon type.", "Validation Error",
@@ -178,7 +153,6 @@ namespace Finals_JCDomasian.Forms
                 return false;
             }
 
-            // Check Payment Status
             if (cmbPaymentStatus.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a payment status.", "Validation Error",
@@ -187,7 +161,6 @@ namespace Finals_JCDomasian.Forms
                 return false;
             }
 
-            // Check age (must be at least 5 years old)
             int age = DateTime.Now.Year - dtpBirthday.Value.Year;
             if (dtpBirthday.Value > DateTime.Now.AddYears(-age)) age--;
 
@@ -202,7 +175,6 @@ namespace Finals_JCDomasian.Forms
             return true;
         }
 
-        // Clear all fields
         private void ClearFields()
         {
             txtFullName.Clear();
@@ -210,12 +182,11 @@ namespace Finals_JCDomasian.Forms
             txtAddress.Clear();
             txtBibNumber.Clear();
             cmbMarathonType.SelectedIndex = -1;
-            cmbPaymentStatus.SelectedIndex = 1; // Default to Unpaid
+            cmbPaymentStatus.SelectedIndex = 1;
             dtpBirthday.Value = DateTime.Now.AddYears(-18);
             txtFullName.Focus();
         }
 
-        // Clear Button Click
         private void btnClear_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to clear all fields?",
@@ -227,10 +198,9 @@ namespace Finals_JCDomasian.Forms
             }
         }
 
-        // Cancel Button Click
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to cancel? Any unsaved data will be lost.",
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel?",
                 "Cancel Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -241,6 +211,16 @@ namespace Finals_JCDomasian.Forms
         }
 
         private void btnRegister_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
 
         }

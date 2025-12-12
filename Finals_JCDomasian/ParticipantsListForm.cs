@@ -164,7 +164,7 @@ namespace Finals_JCDomasian
         {
             try
             {
-                RegistrationForm regForm = new RegistrationForm();
+                Finals_JCDomasian.Forms.RegistrationForm regForm = new Finals_JCDomasian.Forms.RegistrationForm();
                 regForm.ShowDialog(); // Open as modal dialog
 
                 // Refresh data after registration form closes
